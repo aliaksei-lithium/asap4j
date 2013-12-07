@@ -1,0 +1,48 @@
+<section class="main-content show-left-menu" th:fragment="content">
+
+<div class="row top-panel" id="first-level-panel">
+    
+    
+</div>
+        
+
+<div class="row padding-content">
+<div class="col-sm-6 col-lg-6">
+    <h1>Please Login</h1>
+    <form action="#" th:action="@{/events}" th:object="${event}" method="post">
+        <input type="hidden" th:field="*{feature.featureId}" value="2"/>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Name</label>
+        <input type="text" th:field="*{title}" class="form-control" id="exampleInputEmail1" placeholder="Wish" />
+      </div>
+     <div class="form-group" >
+                <label for="group-select">Group</label>
+                <select class="form-control " id="group-select" th:field="*{groupId}">
+                    <option value="1">EPM-UPSA</option>
+                    <option value="1">E3S</option>
+                    <option value="1">Nezavisimosti, 177-2</option>
+                    <option value="1">Custom 1</option>
+                </select>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea class="form-control" id="description" th:field="*{description}" placeholder="Description"> </textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputFile">Attach file</label>
+        <input type="file" id="exampleInputFile" />
+        <p class="help-block">Can be attached photo.</p>
+      </div>
+      
+      <button type="submit" class="btn btn-success btn-lg" id = "wish-post">Submit</button>
+    </form>
+</div>
+
+
+<div class="col-sm-6 col-lg-6">
+   
+</div>
+</div>
+
+</section>

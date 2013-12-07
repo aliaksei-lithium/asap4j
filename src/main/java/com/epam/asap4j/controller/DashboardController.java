@@ -60,7 +60,7 @@ public class DashboardController {
 
     @RequestMapping(value = "wish", method = RequestMethod.GET)
     public String submitWish(HttpSession session, ModelMap model) {
-        model.addAttribute("groupList",groupDao.getPersonGroups(getCurrentUser(session).getPersonId()));
+        model.addAttribute("groupList", groupDao.getPersonGroups(getCurrentUser(session).getPersonId()));
         return "events/event-wishlist-main";
     }
 
@@ -74,13 +74,18 @@ public class DashboardController {
         return "groups/groups-main";
     }
 
+    @RequestMapping(value = "login", method = RequestMethod.GET)
+    public String loginPage(User user) {
+        return "login-main";
+    }
+
     @RequestMapping(value = "login", method = RequestMethod.POST)
-    public String login() {
+    public String login(User user) {
         return "redirect:dashboard";
     }
 
-    private Person getCurrentUser(HttpSession session){
-        User user = (User)session.getAttribute("userBean");
+    private Person getCurrentUser(HttpSession session) {
+        User user = (User) session.getAttribute("userBean");
         return user != null ? user.getPerson() : DEFAULT_USER;
     }
 }
