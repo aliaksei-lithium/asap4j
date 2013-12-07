@@ -7,4 +7,6 @@ public interface EventService {
 
     void fillBirthDayEvents();
 
+    void saveEvent(String title, String description, Long featureId, Long groupId);
+
 }

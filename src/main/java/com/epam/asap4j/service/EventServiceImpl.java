@@ -1,16 +1,17 @@
 package com.epam.asap4j.service;
 
-import com.epam.asap4j.dao.EmployeeInfoDao;
-import com.epam.asap4j.dao.EventDao;
-import com.epam.asap4j.dao.PersonDao;
+import com.epam.asap4j.dao.*;
 import com.epam.asap4j.dto.Event;
 import com.epam.asap4j.dto.Feature;
+import com.epam.asap4j.dto.Group;
 import com.epam.asap4j.dto.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
@@ -29,6 +30,12 @@ public class EventServiceImpl implements EventService {
     private GroupService groupService;
 
     @Autowired
+    private GroupDao groupDao;
+
+    @Autowired
+    private FeatureDao featureDao;
+
+    @Autowired
     private EmployeeInfoDao employeeInfoDao;
 
     private static final Feature BIRTH_DAY = new Feature(1l, "BirthDay");
@@ -42,5 +49,19 @@ public class EventServiceImpl implements EventService {
                 eventDao.saveOrUpdate(event);
             }
         }
+    }
+
+    @Override
+    public void saveEvent(String title, String description, Long featureId, Long groupId) {
+        Event event = new Event();
+        event.setTitle(title);
+        event.setDescription(description);
+        Feature feature = featureDao.getEntityById(featureId);
+        Group group = groupDao.getEntityById(groupId);
+        List<Group> groups = new ArrayList<>();
+        groups.add(group);
+        event.setFeature(feature);
+        event.setGroups(groups);
+        eventDao.saveOrUpdate(event);
     }
 }
