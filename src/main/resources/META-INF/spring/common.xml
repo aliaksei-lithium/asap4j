@@ -19,6 +19,7 @@
         <property name="prefix" value="/WEB-INF/templates/"/>
         <property name="suffix" value=".html"/>
         <property name="templateMode" value="HTML5"/>
+        <property name="cacheable" value="false" />
     </bean>
 
     <bean id="templateEngine"
@@ -28,6 +29,8 @@
 
     <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine" />
+        <property name="order" value="1" />
+        <property name="viewNames" value="templates/*" />
       </bean>
 
 
