@@ -7,4 +7,6 @@ import com.epam.asap4j.dto.GroupParticipation;
  * Date: 12/3/13
  */
 public interface GroupParticipationDao extends BaseDao<GroupParticipation, Long> {
+
+    GroupParticipation getByGroupPersonId(Long groupId, String personId);
 }

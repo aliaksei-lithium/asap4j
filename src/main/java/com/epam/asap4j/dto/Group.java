@@ -23,6 +23,13 @@ public class Group {
         this.groupName = groupName;
     }
 
+    public Group(Long groupId, String groupName, String externalId, Type groupType) {
+        this.groupId = groupId;
+        this.groupName = groupName;
+        this.externalId = externalId;
+        this.groupType = groupType;
+    }
+
     @Id
     @GeneratedValue
     public Long getGroupId() {
