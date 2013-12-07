@@ -75,7 +75,8 @@ public class DashboardController {
     }
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public String loginPage() {
+    public String loginPage(ModelMap model) {
+        model.addAttribute("user", new User());
         return "login-main";
     }
 
