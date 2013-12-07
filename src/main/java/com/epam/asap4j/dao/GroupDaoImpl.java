@@ -27,7 +27,7 @@ public class GroupDaoImpl extends BaseDaoImpl<Group, Long> implements GroupDao {
 
     public List<Group> getPersonGroups(String personId) {
         return sessionFactory.getCurrentSession()
-                .createQuery("select g from l_group_participation gp " +
+                .createQuery("select distinct g from l_group_participation gp " +
                         "inner join gp.group g where gp.person.personId = :personId")
                 .setParameter("personId", personId).list();
     }
