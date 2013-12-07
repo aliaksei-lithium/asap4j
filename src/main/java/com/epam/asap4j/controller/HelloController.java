@@ -1,6 +1,7 @@
 package com.epam.asap4j.controller;
 
 import com.epam.asap4j.dao.PersonDao;
+import com.epam.asap4j.dto.Person;
 import com.epam.asap4j.service.UpsaRestService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,20 +23,8 @@ public class HelloController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
-/*
-        Employee employee = new Employee(null,"Arkadiy Dobkin",123L);
-
-        Long id = personDao.addEntity(employee);
-
-        employee = personDao.getEntityById(id);
-        System.out.println(employee);
-
-        employee.setName("Andrei");
-        personDao.updateEntity(employee);
-
-        employee = personDao.getEntityById(id);
- */
-        model.addAttribute("message", "Hello ");
+        Person employee = personDao.getEntityById(BigInteger.valueOf(271118));
+        model.addAttribute("message", "Hello " + employee.toString());
         model.addAttribute("loc", restService.getLocation(BigInteger.valueOf(271118)));
         return "hello";
     }

@@ -1,6 +1,7 @@
 package com.epam.asap4j.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
@@ -29,5 +30,13 @@ public class Person {
 
     public void setPersonName(String personName) {
         this.personName = personName;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personId=" + personId +
+                ", personName='" + personName + '\'' +
+                '}';
     }
 }

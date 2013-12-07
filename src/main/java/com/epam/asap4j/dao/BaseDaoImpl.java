@@ -36,8 +36,8 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
     @Override
     @Transactional(value = "txManager")
-    public long addEntity(T entity) {
-        return (Long)sessionFactory.getCurrentSession().save(entity);
+    public BigInteger addEntity(T entity) {
+        return (BigInteger)sessionFactory.getCurrentSession().save(entity);
     }
 
     @Override

@@ -13,7 +13,7 @@ public interface BaseDao <T> {
 
     List<T> getEntitiesList();
 
-    long addEntity(T entity);
+    BigInteger addEntity(T entity);
 
     void updateEntity(T entity);
 

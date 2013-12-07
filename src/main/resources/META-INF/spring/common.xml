@@ -5,14 +5,18 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!--    <context:annotation-config/>
-        <context:component-scan base-package="com.epam.asap4j"/>-->
+    <context:annotation-config/>
+    <context:component-scan base-package="com.epam.asap4j.service"/>
+    <context:component-scan base-package="com.epam.asap4j.conf"/>
 
     <context:property-placeholder location="classpath:config.properties"
                                   ignore-unresolvable="true"/>
     <context:property-placeholder location="classpath:database.properties"
                                   ignore-unresolvable="true"/>
 
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="config"/>
+    </bean>
 
     <bean id="templateResolver"
           class="org.thymeleaf.templateresolver.ServletContextTemplateResolver">
@@ -27,12 +31,10 @@
         <property name="templateResolver" ref="templateResolver"/>
     </bean>
 
-
-    <bean id="restClientUPSA" class="com.epam.workload.rest.client.UpsaRestClient">
+    <bean id="restClientUPSA" class="com.epam.asap4j.client.UpsaRestClient">
         <constructor-arg index="0" value="${upsa.rest.auth.url}"/>
         <constructor-arg index="1" value="true"/>
     </bean>
-
 
     <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine" />
