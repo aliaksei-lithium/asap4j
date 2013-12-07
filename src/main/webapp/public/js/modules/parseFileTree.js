@@ -79,19 +79,19 @@ define([
 								return isSingle;
 							}
 
-                        	// absolute path
-                        	if (getSpecificCat.indexOf('/') == 0) {
-                        		returnedTreeObj = _this.json;
+				// absolute path
+				if (getSpecificCat.indexOf('/') == 0) {
+					returnedTreeObj = _this.json;
 
-                        		for (var i = 1; i < getSpecificCatArr.length; i++) {
+					for (var i = 1; i < getSpecificCatArr.length; i++) {
 
 									returnedTreeObj = returnedTreeObj[ getSpecificCatArr[i] ];
-                        		}
+					}
 
 								if (returnObject(returnedTreeObj)) return;
 
-                        	} else {
-                        		//relative path
+				} else {
+					//relative path
 
 								var	currentCheckCat = currentSubCat,
 									returnedTreeObj = currentCatObj;
@@ -110,7 +110,7 @@ define([
 								if (success) {
 									if (returnObject(returnedTreeObj)) return;
 								}
-                        	}
+				}
 
                         } else if (_this.checkCat(currentCat, getSpecificCat, toCheckCat)) {
                             //Turn off cat checking in this process, to get all inner folders
@@ -207,14 +207,14 @@ define([
     };
 
     ParseFileTree.prototype.getParsedJSON = function() {
-    	return this.json;
+	return this.json;
     }
 
     ParseFileTree.prototype.getAllPages = function () {
         //Get pages from all categories
         var fileTree = this.parsePages(),
-        	fileFlat = {},
-        	_this = this;
+		fileFlat = {},
+		_this = this;
 
         var lookForIndexOrGoDeeper = function(tree) {
 			for (folder in tree) {

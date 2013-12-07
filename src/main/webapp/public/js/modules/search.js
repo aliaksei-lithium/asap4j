@@ -13,7 +13,7 @@ define([
     'lib/jquery.autocomplete',
     'modules/parseFileTree',
     ], function ($, options, autocomplete, parseFileTree) {
-    	var json = parseFileTree.getParsedJSON();
+	var json = parseFileTree.getParsedJSON();
 
     //TODO: make localstorage caching
 

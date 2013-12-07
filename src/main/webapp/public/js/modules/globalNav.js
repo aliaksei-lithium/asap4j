@@ -78,7 +78,7 @@ define([
             if ( (navListCat !== undefined) && (navListCat != '') ) { //Catalog has data about category
 
                 var targetCat = parseFileTree.getCatAll(navListCat),
-                	catObj;
+			catObj;
 
 				if (targetCat === undefined) return;
 
@@ -123,14 +123,14 @@ define([
 
                     // sort
                     targetCatArray.sort(function(a, b){
-                    	if (sortType == 'sortByDate') {
-                    		return _this.sortByDate(a, b)
-                    	} else if (sortType == 'sortByAlpha') {
-                    		return _this.sortByAlpha(a, b);
-                    	} else {
+			if (sortType == 'sortByDate') {
+				return _this.sortByDate(a, b)
+			} else if (sortType == 'sortByAlpha') {
+				return _this.sortByAlpha(a, b);
+			} else {
 							return _this.sortByDate(a, b)
 									|| _this.sortByAlpha(a, b);
-                    	}
+			}
                     });
                 }
 
@@ -182,12 +182,12 @@ define([
 
                         //Ignore page list
                         if ( $.inArray(targetPage.title, ignorePages) !== -1 ) {
-                        	continue;
+				continue;
                         }
 
                         //Undefined title
                         if (targetPage === undefined || targetPage.title === undefined) {
-                        	continue;
+				continue;
                         }
 
                         addNavPosition(targetPage);
@@ -211,10 +211,10 @@ define([
                 }
 
             } else {
-            	if (navListCat !== undefined) {
+		if (navListCat !== undefined) {
 					//Display error
 					L_CATALOG_LIST.html(RES_NO_DATA_ATTR);
-            	}
+		}
             }
         });
     };
