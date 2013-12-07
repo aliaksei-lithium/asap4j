@@ -102,7 +102,10 @@ public class AppTests {
         eventDao.saveOrUpdate(new Event("Dasha birthday", featureBirthDay, Arrays.asList(groupE3S,groupMinsk,groupUPSA)));
         eventDao.saveOrUpdate(new Event("I wish a darts", featureBirthDay, Arrays.asList(groupE3S,groupUPSA)));
         eventDao.saveOrUpdate(new Event("Super USA wish", featureBirthDay, Arrays.asList(groupNewtown)));
+        eventDao.saveOrUpdate(new Event("Sam from newtown birthday", featureBirthDay, Arrays.asList(groupNewtown)));
 
-
+        System.out.println("Andrei birthday: " + eventDao.getPersonEventsByFeature(andrei, featureBirthDay));
+        System.out.println("Andrei wish: " + eventDao.getPersonEventsByFeature(andrei, featureWish));
+        System.out.println("Arkadiy wish: " + eventDao.getPersonEventsByFeature(arkadiy, featureWish));
     }
 }

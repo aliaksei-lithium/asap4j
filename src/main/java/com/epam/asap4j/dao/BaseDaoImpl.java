@@ -17,7 +17,7 @@ public abstract class BaseDaoImpl<T, K extends Serializable>
     private Class baseClass;
 
     @Autowired
-    private SessionFactory sessionFactory;
+    protected SessionFactory sessionFactory;
 
     public BaseDaoImpl(Class baseClass) {
         this.baseClass = baseClass;

@@ -39,4 +39,12 @@ public class Feature {
     public void setFeatureName(String featureName) {
         this.featureName = featureName;
     }
+
+    @Override
+    public String toString() {
+        return "Feature{" +
+                "featureId=" + featureId +
+                ", featureName='" + featureName + '\'' +
+                '}';
+    }
 }
