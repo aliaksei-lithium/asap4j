@@ -1,60 +1,106 @@
 <section class="main-content show-left-menu" th:fragment="content">
 
-<div class="row top-panel" id="first-level-panel">
-    
-    <div class="buttons">
+    <div class="row top-panel" id="first-level-panel">
+
+        <div class="buttons">
             <button type="button" id="btn-accident-global" class="btn btn-lg btn-danger">Accident!
             </button>
-    
-            <button type="button" id="btn-wish-global" class="btn btn-lg btn-info">I Wish...</button>
-            <button type="button" id="btn-groups-global" class="btn btn-lg btn-warning" style="float: right">My groups</button>
-        </div>
-</div>
-        
 
-<div class="row padding-content">
-<div class="col-sm-4 col-lg-4">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            <h3 class="panel-title">Happy Birthday!</h3>
-        </div>
-        <div class="panel-body">
-            <div class="alert alert-success"> <a href="#" class="alert-link">...</a> </div>
-            <div class="alert alert-info"> <a href="#" class="alert-link">...</a> </div>
-            <div class="alert alert-warning"> <a href="#" class="alert-link">...</a> </div>
-            <div class="alert alert-danger"> <a href="#" class="alert-link">...</a> </div>
+            <button type="button" id="btn-wish-global" class="btn btn-lg btn-info">I Wish...
+            </button>
+            <button type="button" id="btn-groups-add" class="btn btn-lg btn-success"
+                    style="float: right">Add group
+            </button>
         </div>
     </div>
-</div>
 
-    <div class="col-sm-4 col-lg-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Happy Birthday!</h3>
+
+    <div class="row padding-content">
+        <div class="col-xs-12 col-sm-8 col-lg-8">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th class="groups-group-name">Group Name</th>
+                        <th>Birthday</th>
+                        <th>Accidents</th>
+                        <th>Wishlist</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td class="groups-group-name">Group1</td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td class="groups-group-name">Group2</td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td class="groups-group-name">Group3</td>
+                        <td><span class="glyphicon glyphicon-check"></span></td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                        <td><span class="glyphicon glyphicon-unchecked"></span></td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="panel-body">
-                <div class="alert alert-success"> <a href="#" class="alert-link">...</a> </div>
-                <div class="alert alert-info"> <a href="#" class="alert-link">...</a> </div>
-                <div class="alert alert-warning"> <a href="#" class="alert-link">...</a> </div>
-                <div class="alert alert-danger"> <a href="#" class="alert-link">...</a> </div>
+        </div>
+
+
+        <div class="col-sm-4 col-lg-4" id="group-list-persons">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Participants</h3>
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <span class="hb-name">Aliaksei Zhynhiarouski</span>
+                            <span class="hb-date">13-02-1991</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="hb-name">Andrei Akatsei</span>
+                            <span class="hb-date">13-02-1991</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="hb-name">Maksim Golunko</span>
+                            <span class="hb-date">13-02-1991</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="hb-name">Dzmitry Naskou</span>
+                            <span class="hb-date">13-02-1991</span>
+                        </li>
+                        <li class="list-group-item">
+                            <span class="hb-name">Irina Karaseva</span>
+                            <span class="hb-date">13-02-1991</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-sm-4 col-lg-4">
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Happy Birthday!</h3>
+    <!--<div class="col-xs-6 col-sm-4 col-lg-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Happy Birthday!</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="alert alert-success"> <a href="#" class="alert-link">...</a> </div>
+                    <div class="alert alert-info"> <a href="#" class="alert-link">...</a> </div>
+                    <div class="alert alert-warning"> <a href="#" class="alert-link">...</a> </div>
+                    <div class="alert alert-danger"> <a href="#" class="alert-link">...</a> </div>
+                </div>
             </div>
-            <div class="panel-body">
-                <div class="alert alert-success"> <a href="#" class="alert-link">...</a> </div>
-                <div class="alert alert-info"> <a href="#" class="alert-link">...</a> </div>
-                <div class="alert alert-warning"> <a href="#" class="alert-link">...</a> </div>
-                <div class="alert alert-danger"> <a href="#" class="alert-link">...</a> </div>
-            </div>
-        </div>
-    </div>
-</div>
-
+        </div>-->
 
 
 </section>

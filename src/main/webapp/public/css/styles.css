@@ -6083,8 +6083,10 @@ footer {
 footer .credit {
   margin: 20px 0;
 }
-#wrapper {
-  padding-left: 250px;
+@media (min-width: 768px) {
+  #wrapper {
+    padding-left: 250px;
+  }
 }
 .btn-default {
   color: #555555;
@@ -6856,4 +6858,16 @@ footer {
 }
 .hb-date {
   float: right;
+}
+#group-list-persons {
+  display: none;
+}
+@media (min-width: 768px) {
+  #group-list-persons {
+    display: block;
+  }
+}
+.groups-group-name {
+  min-width: 200px;
+  border-right: 1px solid #DDD;
 }

@@ -10,7 +10,21 @@
         <button type="button" id="btn-groups-global" class="btn btn-lg btn-warning" style="float: right">My groups</button>
     </div>
 </div>
-
+<!--    <tr th:each="owner : ${selections}">
+                  <td>
+                      <a href="ownerDetails.html"
+                         th:href="@{|/owners/${owner.id}|}"
+                         th:text="|${owner.firstName} ${owner.lastName}|">Mary Smith</a>
+                  </td>
+                  <td th:text="${owner.address}">45, Oxford Street</td>
+                  <td th:text="${owner.city}">Cambridge</td>
+                  <td th:text="${owner.telephone}">555-555-555</td>
+                  <td>
+                      <span th:each="pet : ${owner.pets}" th:text="${pet.name}" th:remove="tag">
+                         Rob&nbsp;
+                      </span>
+                  </td>
+              </tr>-->
 
 <div class="row padding-content">
 

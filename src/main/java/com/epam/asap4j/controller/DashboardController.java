@@ -33,4 +33,9 @@ public class DashboardController {
         return "groups/groups-list-main";
     }
 
+    @RequestMapping(value = "group", method = RequestMethod.GET)
+    public String getGroup() {
+        return "groups/groups-main";
+    }
+
 }

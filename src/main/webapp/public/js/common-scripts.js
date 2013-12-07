@@ -46,6 +46,11 @@ var UUI = function () {
             return false;
         });
 
+        $('#btn-groups-add').click(function () {
+            window.location.href = '/group';
+            return false;
+        });
+
     });
 
 
