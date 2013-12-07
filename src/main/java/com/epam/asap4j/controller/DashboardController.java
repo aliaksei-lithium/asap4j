@@ -4,6 +4,7 @@ import com.epam.asap4j.dao.EventDao;
 import com.epam.asap4j.dao.FeatureDao;
 import com.epam.asap4j.dao.GroupDao;
 import com.epam.asap4j.dao.UserDao;
+import com.epam.asap4j.dto.Event;
 import com.epam.asap4j.dto.Feature;
 import com.epam.asap4j.dto.Person;
 import com.epam.asap4j.dto.User;
@@ -55,13 +56,15 @@ public class DashboardController {
     }
 
     @RequestMapping(value = "accident", method = RequestMethod.GET)
-    public String submitAccident() {
+    public String submitAccident( ModelMap model) {
+        model.addAttribute("event", new Event());
         return "events/event-accident-main";
     }
 
     @RequestMapping(value = "wish", method = RequestMethod.GET)
     public String submitWish(HttpSession session, ModelMap model) {
         model.addAttribute("groupList", groupDao.getPersonGroups(getCurrentUser(session).getPersonId()));
+        model.addAttribute("event", new Event());
         return "events/event-wishlist-main";
     }
 

@@ -51,9 +51,17 @@ var UUI = function () {
             return false;
         });
 
-
-
-
+        $(".glyphicon").click(function () {
+            var $this = $(this);
+            if ($this.hasClass(".glyphicon-check")) {
+                $this.removeClass(".glyphicon-check");
+                $this.addClass(".glyphicon-unchecked");
+            }
+            if ($this.hasClass(".glyphicon-unchecked")) {
+                $this.removeClass(".glyphicon-unchecked");
+                $this.addClass(".glyphicon-check");
+            }
+        });
 
     });
 

@@ -22,6 +22,8 @@ public class Event {
 
     private Feature feature;
 
+    private Long groupId;
+
     private List<Group> groups;
 
     public Event() {
@@ -103,5 +105,13 @@ public class Event {
                 ", externalId='" + externalId + '\'' +
                 ", feature=" + feature +
                 "}\n";
+    }
+
+    public Long getGroupId() {
+        return groupId;
+    }
+
+    public void setGroupId(Long groupId) {
+        this.groupId = groupId;
     }
 }
