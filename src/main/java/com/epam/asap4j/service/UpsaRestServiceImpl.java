@@ -4,6 +4,7 @@ import com.epam.asap4j.client.UpsaRestClient;
 import com.epam.asap4j.client.token.CredentialTypes;
 import com.epam.asap4j.client.token.Credentials;
 import com.epam.asap4j.conf.MessageStorage;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,9 +42,14 @@ public class UpsaRestServiceImpl implements UpsaRestService {
     }
 
     @Override
+    public JSONArray getProjectTeam(String projectId) {
+        UriBuilder uriBuilder = UriBuilder.fromUri(BASE_URI + "/projects/{id}/team");
+        return restClient.getArray(uriBuilder.build(projectId).toString(), null, CREDENTIALS);
+    }
+
+    @Override
     public JSONObject getUserByName(String name) {
-        String url = String.format("%s/employees?compose=workloads", BASE_URI);
-        UriBuilder uriBuilder = UriBuilder.fromUri(url);
+        UriBuilder uriBuilder = UriBuilder.fromUri(BASE_URI + "/employees?compose=workloads");
         uriBuilder.queryParam("name", name);
         return restClient.get(uriBuilder.toString(), null, CREDENTIALS);
     }
