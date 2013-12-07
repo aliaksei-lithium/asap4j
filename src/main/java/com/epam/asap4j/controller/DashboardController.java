@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class DashboardController {
 
     @RequestMapping(method = RequestMethod.GET)
-    public String doIt() {
-        return "layout";
+    public String getDashboard() {
+        return "dashboard/dashboard-main";
     }
 
 }
