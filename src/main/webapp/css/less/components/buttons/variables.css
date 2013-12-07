@@ -1,0 +1,52 @@
+There is no no-color option ("less --help" for help)
+@btn-padding-vertical  : 10px;
+@btn-padding-horizontal : 10px;
+@btn-font-size : 12px;
+@btn-line-height : 10px;
+@btn-border-radius : 0;
+
+@btn-default-bg : #dddddd;
+@btn-default-border : #dddddd;
+@btn-default-color : #555555;
+
+@btn-primary-bg : #247DA9;
+@btn-primary-color : #ffffff;
+@btn-primary-border : #20739D;
+@btn-primary-activeColor : #20739D;
+@btn-primary-disabledColor : #8ebcd2;
+@btn-primary-borderDisabledColor : #81b2ca;
+
+@btn-success-color : #ffffff;
+@btn-success-bg : #50A350;
+@btn-success-border : #4A9949;
+@btn-success-activeColor : #4A9949;
+@btn-success-disabledColor : #8ec38e;
+@btn-success-borderDisabledColor : #82ba82;
+
+@btn-info-color : #ffffff;
+@btn-info-bg : #5bc0de;
+@btn-info-border : #46b8db;
+@btn-info-activeColor : #46b8db;
+@btn-info-disabledColor : #5bc0de;
+@btn-info-borderDisabledColor : #8dc8d9;
+
+@btn-danger-color : #ffffff;
+@btn-danger-bg : #d95450;
+@btn-danger-border : #d43f3a;
+@btn-danger-ActiveColor : #d43f3a;
+@btn-danger-DisabledColor : #efabaa;
+@btn-danger-BorderDisabledColor : #d79897;
+
+@btn-warning-color : #ffffff;
+@btn-warning-bg : #f0ae4d;
+@btn-warning-border : #eea234;
+@btn-warning-activeColor : #f0ae4d;
+@btn-warning-disabledColor : #f2c688;
+@btn-warning-borderDisabledColor : #e9bf84;
+
+@btn-inverse-color : #ffffff;
+@btn-inverse-bg : #676767;
+@btn-inverse-border : #595959;
+@btn-inverse-activeColor : #676767;
+@btn-inverse-disabledColor : #aaa9a9;
+@btn-inverse-borderDisabledColor : #9e9e9e;

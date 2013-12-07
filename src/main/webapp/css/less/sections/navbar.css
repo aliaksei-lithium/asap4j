@@ -1,0 +1,53 @@
+There is no no-color option ("less --help" for help)
+.navbar {
+  margin-bottom: 0;
+  background-color: @navbar-bg-color;
+  border: 0;
+  border-radius: 0;
+  border-bottom: 3px solid @navbar-border-bottom-color;
+  min-height: @navbar-height;
+  max-height: @navbar-height;
+}
+.icon-bar {
+  background-color: #fff;
+}
+
+.navbar-brand {
+  padding: 10px 15px 10px 20px;
+  font-family: Flame, Tahoma, sans-serif;
+  font-weight: bolder;
+  font-size: @navbar-brand-fontsize;
+  color: @navbar-brand-color;
+}
+
+.navbar-toggle {
+  color: @navbar-link-color;
+  //background-color: rgba(0, 0, 0, 0);
+  border: 1px solid @navbar-link-color;
+  > .icon-bar {
+    color: @navbar-link-color
+  }
+}
+
+.navbar-nav {
+  height: 40px;
+  & li a {
+    padding: 10px;
+    color: @navbar-link-color
+  }
+}
+
+.navbar-search-form {
+  padding: 2px 15px;
+  & .navbar-search {
+    height: 30px;
+    width: 250px;
+    font-size: 12px;
+    border-radius: @navbar-search-border-radius;
+    display: none;
+    @media (min-width: @screen-desktop) {
+      display: block;
+    }
+  }
+}
+

@@ -1,0 +1,175 @@
+There is no no-color option ("less --help" for help)
+@sidebar-bg-color: #fafafa;
+@sidebar-border-right-color: #dbdad9;
+@sidebar-default-color: #333333;
+@sidebar-hover-color: #257da9;
+@sidebar-border-bottom-color: #dbdad9;
+
+.sidebar-nav {
+  > .nav {
+    margin: -10px -15px 0 -15px;
+    @media (min-width: @screen-desktop) {
+      margin: -10px -15px -5px -15px;
+    }
+    border: 0;
+    font-size: 14px;
+    white-space: nowrap;
+
+    li {
+      border-left: 3px solid @sidebar-bg-color;
+      border-bottom: 1px solid @sidebar-border-bottom-color;
+      &:hover {
+        border-left: 3px solid @sidebar-hover-color;
+      }
+      &.active {
+        border-left: 3px solid @sidebar-hover-color;
+        a {
+          color: @sidebar-hover-color;
+        }
+      }
+      a {
+        padding: 15px 10px 15px 20px;
+        color: @sidebar-default-color;
+        &:hover {
+          color: @sidebar-hover-color;
+        }
+      }
+    }
+  }
+}
+
+//VITALI
+/*Left Menu*/
+.left-menu {
+  padding-top: 43px;
+}
+
+.left-menu ul {
+  border-bottom: 1px solid #fff;
+}
+
+.left-menu ul li {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #dcdbdb;
+  background-color: #eee;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.left-menu ul li a {
+  text-decoration: none;
+  color: #1c1c1c;
+  display: block;
+  padding: 10px 0px 10px 20px;
+}
+
+.left-menu ul li a:hover {
+  text-decoration: none;
+  color: #247da9;
+  border-left: 3px solid #247da9;
+  padding-left: 17px;
+}
+
+.left-menu ul ul {
+  border-bottom: 0px;
+}
+
+.left-menu ul ul li {
+  background: #fafafa;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #dcdbdb;
+  text-transform: none;
+  font-size: 13px;
+  list-style: square inside;
+  color: #666;
+  display: none;
+}
+
+.left-menu ul ul li a {
+  color: #777;
+  padding-left: 20px;
+  border-left: 0px;
+}
+
+.left-menu ul ul li a:hover {
+  color: #444;
+  border-left: 3px solid #777;
+}
+
+.left-menu ul ul ul li {
+  color: #333;
+  background: #fff;
+}
+
+.left-menu ul ul ul li a {
+  padding-left: 35px;
+  font-size: 12px;
+  color: #333;
+}
+
+.left-menu ul ul ul li a:hover {
+  padding-left: 32px;
+  border-left: 3px solid #ccc;
+}
+
+.left-menu .nav-open, .left-menu .nav-open:hover {
+  border-left: 3px solid #247da9;
+  padding-left: 17px;
+  color: #247da9;
+}
+
+.left-menu .caret {
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
+.left-menu .nav-open .caret {
+  border-top: 0 dotted;
+  border-bottom: 4px solid #000000;
+}
+
+.left-menu ul ul li .nav-open,
+.left-menu ul ul li .nav-open:hover {
+  border-left: 3px solid #777;
+  padding-left: 17px;
+  color: #1c1c1c;
+}
+
+.sidebar-left {
+  padding: 0px;
+  border-right: 1px solid #dadada;
+  background: #eee;
+  width: 250px;
+  height: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+.hide-left-menu .sidebar-left {
+  left: -250px;
+  transition: 1s;
+}
+
+.sidebar-left-inner {
+  height: 100%;
+  min-height: 100%;
+  margin-right: 5px;
+  border-right: 1px solid #dadada;
+  position: relative;
+}
+
+.main-content {
+  margin: 0 0 0 250px;
+  transition: 1s;
+}
+
+.hide-left-menu .main-content {
+  margin-left: 0px;
+  transition: 1s;
+}
+
+#sidebar-left .nicescroll-rails div {
+  margin-right: -5px;
+}

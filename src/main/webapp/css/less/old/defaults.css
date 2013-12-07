@@ -1,0 +1,37 @@
+There is no no-color option ("less --help" for help)
+/*
+*
+* Core styles, compiles to '../defaults.css'
+*
+* ! Modify with caution or use /user/css/user.css to override core styles !
+*
+*/
+
+//Based on rhr.me/MCSS methodology
+@import url('../variables');
+@import url('reset');
+
+@import url('context');
+
+//Base
+@import url('base/togglers');
+@import url('base/buttons');
+@import url('base/navigation');
+@import url('base/grids');
+
+//Project
+@import url('project/layout');
+@import url('project/header');
+@import url('project/footer');
+@import url('project/catalog');
+@import url('project/navigation');
+@import url('project/info');
+@import url('project/section');
+@import url('project/examples');
+@import url('project/source-code');
+@import url('project/search');
+
+//Cosmetic
+@import url('cosmetic/highlights');
+@import url('cosmetic/links');
+@import url('cosmetic/helpers');

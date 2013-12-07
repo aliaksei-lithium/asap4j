@@ -1,0 +1,18 @@
+There is no no-color option ("less --help" for help)
+/* States
+---------------------------------------------------------------------------------- */
+
+.source__scrolled-down .source_header {
+	opacity: 1;
+
+    @media @media_min-step-m {opacity: .1;}
+	}
+
+.source__scrolled-down .source_header:hover {
+	opacity: 1;
+	}
+
+
+
+/* /States
+---------------------------------------------------------------------------------- */

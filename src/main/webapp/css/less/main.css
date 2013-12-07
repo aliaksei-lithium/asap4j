@@ -1,0 +1,61 @@
+There is no no-color option ("less --help" for help)
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  .full-height();
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+  > .container {
+    .container-fixed();
+    .full-height();
+    //max-width: 1520px;
+    margin-top: -40px; //footer negotiate
+    padding-top: 40px;
+    width: 100% !important;
+  }
+}
+
+.main-content {
+  .make-row();
+  .full-height();
+  #sidebar-left {
+    .full-height();
+    .make-sm-column(2);
+    .make-lg-column(2);
+  }
+  #content-area {
+    > .action-panel {
+      min-height: 50px;
+      background-color: @row-panel-bg;
+      .make-row();
+      > .panel-nav {
+        .make-xs-column(5);
+      }
+      > .panel-head {
+        .make-xs-column(5);
+      }
+      > .panel-btn-group {
+        .make-xs-column(2);
+      }
+    }
+    .full-height();
+    .make-sm-column(10);
+    .make-lg-column(10);
+  }
+}
+
+.main-content {
+  & .jumbotron {
+    margin-top: 20px;
+  }
+}
+
+footer {
+  background-color: @footer-bg-color;
+  height: 60px;
+  & .credit {
+    margin: 20px 0;
+  }
+}
