@@ -1,0 +1,32 @@
+##For Intellij IDEA 
+*.iml
+.idea/
+
+##Temp files
+*~
+
+## Eclipse IDE
+.project
+.settings/
+distribution/.project
+distribution/.settings/
+workload/.classpath
+workload/.project
+workload/.settings/
+workload-common/.classpath
+workload-dto/.classpath
+workload-rest-v2/.classpath
+workload-rest-v3/bin/
+workload-rest-v3/.classpath
+workload-service/.classpath
+workload-web/.classpath
+
+##No Traget Files
+**/target
+
+##Netbeans IDE
+nb-configuration.xml
+
+rebel.xml
+
+atlassian-ide-plugin.xml
