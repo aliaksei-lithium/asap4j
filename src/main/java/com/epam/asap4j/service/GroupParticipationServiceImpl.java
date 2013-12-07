@@ -12,6 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @Transactional(value = "txManager")
 public class GroupParticipationServiceImpl implements GroupParticipationService {
@@ -34,6 +36,9 @@ public class GroupParticipationServiceImpl implements GroupParticipationService 
             case UNIT:
                 fillGroupParticipationsUnit(group.getExternalId(), group);
                 break;
+            case LOCATION:
+                fillGroupParticipationsLocation(group.getExternalId(), group);
+            break;
         }
     }
 
@@ -68,6 +73,18 @@ public class GroupParticipationServiceImpl implements GroupParticipationService 
             GroupParticipation participation = participationDao.getByGroupPersonId(group.getGroupId(), person.getPersonId());
             if (participation == null) {
                 participation = new GroupParticipation(group, person);
+                participationDao.saveOrUpdate(participation);
+            }
+        }
+    }
+
+    private void fillGroupParticipationsLocation(String personId, Group group) {
+        Person person = personDao.getEntityById(personId);
+        List<Person> persons = personDao.getPersonsFromSameLocation(person);
+        for(Person p : persons) {
+            GroupParticipation participation = participationDao.getByGroupPersonId(group.getGroupId(), p.getPersonId());
+            if (participation == null) {
+                participation = new GroupParticipation(group, p);
                 participationDao.saveOrUpdate(participation);
             }
         }

@@ -67,6 +67,9 @@ public class UserServiceImpl implements UserService {
             Group projectGroup = new Group(null, "Project " + project.getString("projectName"), project.getString("projectId"), Group.Type.PROJECT);
             createGroup(projectGroup, user.getPerson());
         }
+
+        Group locGroup = new Group(null, userObject.getString("fullLocation"), userObject.getString("locationId"), Group.Type.LOCATION);
+        createGroup(locGroup, user.getPerson());
     }
 
     private void createGroup(Group newGroup, Person person) {
