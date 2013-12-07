@@ -32,7 +32,7 @@ public class GroupParticipationServiceImpl implements GroupParticipationService 
                 fillGroupParticipationsProjects(group.getExternalId(), group);
                 break;
             case UNIT:
-
+                fillGroupParticipationsUnit(group.getExternalId(), group);
                 break;
         }
     }
@@ -41,6 +41,24 @@ public class GroupParticipationServiceImpl implements GroupParticipationService 
         JSONArray projectTeam = restService.getProjectTeam(projectId);
         for (int i = 0; i < projectTeam.length(); i++) {
             JSONObject personObject = projectTeam.getJSONObject(i);
+            String personId = personObject.getString("employeeId");
+            Person person = personDao.getEntityById(personId);
+            if (person == null) {
+                person = new Person(personId, personObject.getString("fullName"));
+                personDao.saveOrUpdate(person);
+            }
+            GroupParticipation participation = participationDao.getByGroupPersonId(group.getGroupId(), person.getPersonId());
+            if (participation == null) {
+                participation = new GroupParticipation(group, person);
+                participationDao.saveOrUpdate(participation);
+            }
+        }
+    }
+
+    private void fillGroupParticipationsUnit(String unitId, Group group) {
+        JSONArray unitEmployees = restService.getUnitEmployees(unitId);
+        for (int i = 0; i < unitEmployees.length(); i++) {
+            JSONObject personObject = unitEmployees.getJSONObject(i);
             String personId = personObject.getString("employeeId");
             Person person = personDao.getEntityById(personId);
             if (person == null) {

@@ -55,4 +55,10 @@ public class UpsaRestServiceImpl implements UpsaRestService {
         uriBuilder.queryParam("name", name);
         return restClient.get(uriBuilder.toString(), null, CREDENTIALS);
     }
+
+    @Override
+    public JSONArray getUnitEmployees(String unitId) {
+        UriBuilder uriBuilder = UriBuilder.fromUri(BASE_URI + "/units/{id}/employees?depth=1&subordinationType=solid&start=1&size=1000");
+        return restClient.getArray(uriBuilder.build(unitId).toString(), null, CREDENTIALS);
+    }
 }

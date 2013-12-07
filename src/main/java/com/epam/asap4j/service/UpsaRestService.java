@@ -14,5 +14,7 @@ public interface UpsaRestService {
 
     JSONArray getProjectTeam(String projectId);
 
+    JSONArray getUnitEmployees(String unitId);
+
     JSONObject getUserByName(String name);
 }
