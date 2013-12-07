@@ -57,30 +57,33 @@ public class AppTests {
     @Test
     public void testAddEntities() {
 
-        Person andrei = new Person("4060741400005112579", "Andrei Akatsyeu");
+        Person andrei = new Person("4060741400006438769", "Aliaksei Zhynhiarouski");
         personDao.saveOrUpdate(andrei);
 
         Person arkadiy = new Person("271118", "Arkadiy Dobkin");
         personDao.saveOrUpdate(arkadiy);
 
-        Feature featureBirthDay = new Feature(1L, "BirthDay");
+        Feature featureBirthDay = new Feature(1L, "birthday");
         featureDao.saveOrUpdate(featureBirthDay);
 
-        Feature featureWish = new Feature(2L, "Wish List");
+        Feature featureWish = new Feature(2L, "wishlist");
+        featureDao.saveOrUpdate(featureWish);
+
+        Feature accedent = new Feature(3L, "accedent");
         featureDao.saveOrUpdate(featureWish);
 
         System.out.println(personDao.getEntitiesList());
 
-        Group groupMinsk = new Group(1L, "Location Minsk");
+        Group groupMinsk = new Group(null, "Location Minsk");
         groupDao.saveOrUpdate(groupMinsk);
 
-        Group groupNewtown = new Group(2L, "Location Newtown");
+        Group groupNewtown = new Group(null, "Location Newtown");
         groupDao.saveOrUpdate(groupNewtown);
 
-        Group groupUPSA = new Group(3L, "Project EPM-UPSA");
+        Group groupUPSA = new Group(null, "Project EPM-UPSA");
         groupDao.saveOrUpdate(groupUPSA);
 
-        Group groupE3S = new Group(4L, "Unit E3S");
+        Group groupE3S = new Group(null, "Unit E3S");
         groupDao.saveOrUpdate(groupE3S);
 
         System.out.println(groupDao.getEntitiesList());
@@ -105,8 +108,8 @@ public class AppTests {
         groupParticipationDao.saveOrUpdate(groupParticipation);
 
         eventDao.saveOrUpdate(new Event("Dasha birthday", featureBirthDay, Arrays.asList(groupE3S,groupMinsk,groupUPSA)));
-        eventDao.saveOrUpdate(new Event("I wish a darts", featureBirthDay, Arrays.asList(groupE3S,groupUPSA)));
-        eventDao.saveOrUpdate(new Event("Super USA wish", featureBirthDay, Arrays.asList(groupNewtown)));
+        eventDao.saveOrUpdate(new Event("I wish a darts", featureWish, Arrays.asList(groupE3S,groupUPSA)));
+        eventDao.saveOrUpdate(new Event("Super USA wish", featureWish, Arrays.asList(groupNewtown)));
         eventDao.saveOrUpdate(new Event("Sam from newtown birthday", featureBirthDay, Arrays.asList(groupNewtown)));
 
         System.out.println("Andrei birthday: " + eventDao.getPersonEventsByFeature(andrei, featureBirthDay));

@@ -30,7 +30,10 @@ public class EventDaoImpl extends BaseDaoImpl<Event, Long> implements EventDao {
                 "where g.groupId = gp.group.groupId " +
                 "and sb.groupParticipation.groupParticipationId = gp.groupParticipationId " +
                 "and gp.person.personId = :personId " +
-                "and sb.feature.featureId = :featureId")
+                "and sb.feature.featureId = :featureId " +
+                        "and e.date > current_date " +
+                        "and e.date < (current_date + 30)" +
+                        " order by e.date desc")
                 .setParameter("personId", person.getPersonId())
                 .setParameter("featureId", feature.getFeatureId()).list();
     }
