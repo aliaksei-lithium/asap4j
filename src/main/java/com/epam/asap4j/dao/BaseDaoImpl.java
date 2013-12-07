@@ -4,14 +4,15 @@ import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.math.BigInteger;
+import java.io.Serializable;
 import java.util.List;
 
 /**
  * User: Andrei_Akatsyeu
  * Date: 12/3/13
  */
-public abstract class BaseDaoImpl<T> implements BaseDao<T> {
+public abstract class BaseDaoImpl<T, K extends Serializable>
+        implements BaseDao<T, K> {
 
     private Class baseClass;
 
@@ -24,26 +25,20 @@ public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
     @Override
     @Transactional(value = "txManager")
-    public T getEntityById(BigInteger id) {
-        return (T)sessionFactory.getCurrentSession().get(baseClass, id);
+    public T getEntityById(K id) {
+        return (T) sessionFactory.getCurrentSession().get(baseClass, id);
     }
 
     @Override
     @Transactional(value = "txManager")
     public List<T> getEntitiesList() {
-        return (List<T>)sessionFactory.getCurrentSession().createCriteria(baseClass).list();
+        return (List<T>) sessionFactory.getCurrentSession().createCriteria(baseClass).list();
     }
 
     @Override
     @Transactional(value = "txManager")
-    public BigInteger addEntity(T entity) {
-        return (BigInteger)sessionFactory.getCurrentSession().save(entity);
-    }
-
-    @Override
-    @Transactional(value = "txManager")
-    public void updateEntity(T entity) {
-        sessionFactory.getCurrentSession().update(entity);
+    public void saveOrUpdate(T entity) {
+        sessionFactory.getCurrentSession().saveOrUpdate(entity);
     }
 
     @Override

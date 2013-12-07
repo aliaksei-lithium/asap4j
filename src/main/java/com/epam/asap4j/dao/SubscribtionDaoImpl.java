@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * Date: 12/3/13
  */
 @Repository
-public class SubscribtionDaoImpl extends BaseDaoImpl<Subscribtion> implements SubscribtionDao {
+public class SubscribtionDaoImpl extends BaseDaoImpl<Subscribtion, Long> implements SubscribtionDao {
 
     public SubscribtionDaoImpl() {
         super(Subscribtion.class);

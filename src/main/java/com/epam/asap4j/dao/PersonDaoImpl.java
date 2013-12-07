@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
  * Date: 12/3/13
  */
 @Repository
-public class PersonDaoImpl extends BaseDaoImpl<Person> implements PersonDao {
+public class PersonDaoImpl extends BaseDaoImpl<Person, String> implements PersonDao {
 
     public PersonDaoImpl() {
         super(Person.class);

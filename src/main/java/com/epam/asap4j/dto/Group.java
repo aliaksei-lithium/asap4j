@@ -3,7 +3,6 @@ package com.epam.asap4j.dto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.math.BigInteger;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
@@ -11,17 +10,25 @@ import java.math.BigInteger;
 @Entity
 public class Group {
 
-    private BigInteger groupId;
+    private Long groupId;
 
     private String groupName;
 
+    public Group() {
+    }
+
+    public Group(Long groupId, String groupName) {
+        this.groupId = groupId;
+        this.groupName = groupName;
+    }
+
     @Id
     @GeneratedValue
-    public BigInteger getGroupId() {
+    public Long getGroupId() {
         return groupId;
     }
 
-    public void setGroupId(BigInteger personId) {
+    public void setGroupId(Long personId) {
         this.groupId = personId;
     }
 
@@ -31,5 +38,13 @@ public class Group {
 
     public void setGroupName(String personName) {
         this.groupName = personName;
+    }
+
+    @Override
+    public String toString() {
+        return "Group{" +
+                "groupId=" + groupId +
+                ", groupName='" + groupName + '\'' +
+                '}';
     }
 }

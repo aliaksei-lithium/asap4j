@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * Date: 12/3/13
  */
 @Repository
-public class FeatureDaoImpl extends BaseDaoImpl<Feature> implements FeatureDao {
+public class FeatureDaoImpl extends BaseDaoImpl<Feature, Long> implements FeatureDao {
 
     public FeatureDaoImpl() {
         super(Feature.class);

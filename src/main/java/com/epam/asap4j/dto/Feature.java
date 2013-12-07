@@ -3,7 +3,6 @@ package com.epam.asap4j.dto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.math.BigInteger;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
@@ -11,17 +10,25 @@ import java.math.BigInteger;
 @Entity
 public class Feature {
 
-    private BigInteger featureId;
+    private Long featureId;
 
     private String featureName;
 
+    public Feature() {
+    }
+
+    public Feature(Long featureId, String featureName) {
+        this.featureId = featureId;
+        this.featureName = featureName;
+    }
+
     @Id
     @GeneratedValue
-    public BigInteger getFeatureId() {
+    public Long getFeatureId() {
         return featureId;
     }
 
-    public void setFeatureId(BigInteger featureId) {
+    public void setFeatureId(Long featureId) {
         this.featureId = featureId;
     }
 

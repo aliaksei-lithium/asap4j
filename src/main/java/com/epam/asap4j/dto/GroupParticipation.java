@@ -1,7 +1,6 @@
 package com.epam.asap4j.dto;
 
 import javax.persistence.*;
-import java.math.BigInteger;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
@@ -9,23 +8,31 @@ import java.math.BigInteger;
 @Entity
 public class GroupParticipation {
 
-    private BigInteger groupParticipationId;
+    private Long groupParticipationId;
 
     private Group group;
 
     private Person person;
 
+    public GroupParticipation() {
+    }
+
+    public GroupParticipation(Group group, Person person) {
+        this.group = group;
+        this.person = person;
+    }
+
     @Id
     @GeneratedValue
-    public BigInteger getGroupParticipationId() {
+    public Long getGroupParticipationId() {
         return groupParticipationId;
     }
 
-    public void setGroupParticipationId(BigInteger groupParticipationId) {
+    public void setGroupParticipationId(Long groupParticipationId) {
         this.groupParticipationId = groupParticipationId;
     }
 
-    @ManyToOne( cascade = {CascadeType.ALL} )
+    @ManyToOne(cascade = {CascadeType.ALL})
     public Group getGroup() {
         return group;
     }
@@ -34,7 +41,7 @@ public class GroupParticipation {
         this.group = group;
     }
 
-    @ManyToOne( cascade = {CascadeType.ALL} )
+    @ManyToOne(cascade = {CascadeType.ALL})
     public Person getPerson() {
         return person;
     }

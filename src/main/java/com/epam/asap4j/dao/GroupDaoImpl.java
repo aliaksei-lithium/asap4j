@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * Date: 12/3/13
  */
 @Repository
-public class GroupDaoImpl extends BaseDaoImpl<Group> implements GroupDao {
+public class GroupDaoImpl extends BaseDaoImpl<Group, Long> implements GroupDao {
 
     public GroupDaoImpl() {
         super(Group.class);

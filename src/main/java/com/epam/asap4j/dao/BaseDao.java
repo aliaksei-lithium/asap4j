@@ -1,5 +1,6 @@
 package com.epam.asap4j.dao;
 
+import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 
@@ -7,15 +8,13 @@ import java.util.List;
  * User: Andrei_Akatsyeu
  * Date: 12/3/13
  */
-public interface BaseDao <T> {
+public interface BaseDao<T, K extends Serializable> {
 
-    T getEntityById(BigInteger id);
+    T getEntityById(K id);
 
     List<T> getEntitiesList();
 
-    BigInteger addEntity(T entity);
-
-    void updateEntity(T entity);
+    void saveOrUpdate(T entity);
 
     void deleteEntity(T entity);
 

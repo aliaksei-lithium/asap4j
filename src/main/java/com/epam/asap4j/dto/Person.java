@@ -3,7 +3,6 @@ package com.epam.asap4j.dto;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.math.BigInteger;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
@@ -11,16 +10,24 @@ import java.math.BigInteger;
 @Entity
 public class Person {
 
-    private BigInteger personId;
+    private String personId;
 
     private String personName;
 
+    public Person() {
+    }
+
+    public Person(String personId, String personName) {
+        this.personId = personId;
+        this.personName = personName;
+    }
+
     @Id
-    public BigInteger getPersonId() {
+    public String getPersonId() {
         return personId;
     }
 
-    public void setPersonId(BigInteger personId) {
+    public void setPersonId(String personId) {
         this.personId = personId;
     }
 

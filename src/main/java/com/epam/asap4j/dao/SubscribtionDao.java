@@ -6,5 +6,5 @@ import com.epam.asap4j.dto.Subscribtion;
  * User: Andrei_Akatsyeu
  * Date: 12/3/13
  */
-public interface SubscribtionDao extends BaseDao<Subscribtion> {
+public interface SubscribtionDao extends BaseDao<Subscribtion, Long> {
 }
