@@ -2,6 +2,7 @@ package com.epam.asap4j.controller;
 
 import com.epam.asap4j.dao.EventDao;
 import com.epam.asap4j.dao.FeatureDao;
+import com.epam.asap4j.dao.GroupDao;
 import com.epam.asap4j.dao.UserDao;
 import com.epam.asap4j.dto.Feature;
 import com.epam.asap4j.dto.Person;
@@ -24,6 +25,9 @@ public class DashboardController {
     private EventDao eventDao;
 
     @Autowired
+    private GroupDao groupDao;
+
+    @Autowired
     private FeatureDao featureDao;
 
     @Autowired
@@ -32,9 +36,9 @@ public class DashboardController {
     private static final Person DEFAULT_USER = new Person("4060741400006438769","Aliaksei Zhynhiarouski");
 
     @RequestMapping(method = RequestMethod.GET)
-    public String index(HttpSession session, @RequestParam(value = "userName") String userName) {
-        if(session.getAttribute("userBean")==null){
-            session.setAttribute("userBean", userDao.getByName(userName != null ? userName : DEFAULT_USER.getPersonName()));
+    public String index(HttpSession session, @RequestParam(value = "userName", required = false) String userName) {
+        if(session.getAttribute("userBean") == null){
+            session.setAttribute("userBean", userDao.getByName(getCurrentUser(session).getPersonName()));
         }
         return "redirect:dashboard";
     }
@@ -43,8 +47,7 @@ public class DashboardController {
     public String getDashboard(HttpSession session, ModelMap model) {
         List<Feature> features = featureDao.getEntitiesList();
         for(Feature feature : features){
-            User user = (User)session.getAttribute("userBean");
-            model.addAttribute(feature.getFeatureName(), eventDao.getPersonEventsByFeature(user != null ? user.getPerson() : DEFAULT_USER, feature));
+            model.addAttribute(feature.getFeatureName(), eventDao.getPersonEventsByFeature(getCurrentUser(session), feature));
         }
 
         return "dashboard/dashboard-main";
@@ -56,7 +59,8 @@ public class DashboardController {
     }
 
     @RequestMapping(value = "wish", method = RequestMethod.GET)
-    public String submitWish() {
+    public String submitWish(HttpSession session, ModelMap model) {
+        model.addAttribute("groupList",groupDao.getPersonGroups(getCurrentUser(session).getPersonId()));
         return "events/event-wishlist-main";
     }
 
@@ -70,4 +74,8 @@ public class DashboardController {
         return "groups/groups-main";
     }
 
+    private Person getCurrentUser(HttpSession session){
+        User user = (User)session.getAttribute("userBean");
+        return user != null ? user.getPerson() : DEFAULT_USER;
+    }
 }
