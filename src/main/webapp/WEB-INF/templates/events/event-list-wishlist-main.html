@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>EPM-ASAP</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link rel="icon" type="image/ico" href="/public/assets/favicon.ico"/>
+
+    <link href="/public/css/styles.css" rel="stylesheet"
+          th:href="@{/public/css/styles.css}"/>
+    <link href="/public/css/main.css" rel="stylesheet" th:href="@{/public/css/main.css}"/>
+    <!--<link href="/css/style-responsive.css" rel="stylesheet">-->
+    <link href="/public/css/lib/jquery.scrollbar.css" rel="stylesheet"
+          th:href="@{/public/css/lib/jquery.scrollbar.css}"/>
+
+    <!--[if lt IE 9]>
+    <script src="/public/js/lib/html5shiv/html5shiv.js"
+            th:src="@{/public/js/lib/html5shiv/html5shiv.js}"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+<div id="wrapper">
+
+    <header th:replace="header :: header"></header>
+
+    <aside th:replace="sidebar-nav :: sidebar"></aside>
+
+    <section class="main-content show-left-menu" th:replace="dashboard/dashboard-content :: content"></section>
+
+</div>
+
+<script data-main="/public/js/main" src="/public/js/lib/r.js/require.js"
+        th:src="@{/public/js/lib/r.js/require.js}"></script>
+
+</body>
+</html>

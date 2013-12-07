@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class FeatureController {
 
     @RequestMapping(method = RequestMethod.GET)
-       public String doIt() {
-           return "layout";
-       }
+    public String doIt() {
+        return "layout";
+    }
+
 }
