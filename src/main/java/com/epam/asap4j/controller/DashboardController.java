@@ -7,6 +7,7 @@ import com.epam.asap4j.dao.UserDao;
 import com.epam.asap4j.dto.Feature;
 import com.epam.asap4j.dto.Person;
 import com.epam.asap4j.dto.User;
+import com.epam.asap4j.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -31,14 +32,14 @@ public class DashboardController {
     private FeatureDao featureDao;
 
     @Autowired
-    private UserDao userDao;
+    private UserService userService;
 
     private static final Person DEFAULT_USER = new Person("4060741400006438769", "Aliaksei Zhynhiarouski");
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(HttpSession session, @RequestParam(value = "userName", required = false) String userName) {
-        if (session.getAttribute("userBean") == null) {
-            session.setAttribute("userBean", userDao.getByName(getCurrentUser(session).getPersonName()));
+        if(session.getAttribute("userBean")==null){
+            session.setAttribute("userBean", userService.loginUser(userName != null ? userName : DEFAULT_USER.getPersonName()));
         }
         return "redirect:dashboard";
     }

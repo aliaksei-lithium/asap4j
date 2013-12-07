@@ -12,7 +12,7 @@ public class UserDaoImpl extends BaseDaoImpl<User, Long> implements UserDao {
 
     public User getByName(String name) {
         return (User) sessionFactory.getCurrentSession()
-                .createQuery("from User u where u.person.personName = :name").setParameter("name", name).uniqueResult();
+                .createQuery("from m_user u where u.person.personName = :name").setParameter("name", name).uniqueResult();
     }
 
 }

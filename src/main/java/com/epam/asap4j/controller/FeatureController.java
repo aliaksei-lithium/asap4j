@@ -1,9 +1,5 @@
 package com.epam.asap4j.controller;
 
-import com.epam.asap4j.dao.EventDao;
-import com.epam.asap4j.dao.FeatureDao;
-import com.epam.asap4j.dto.Event;
-import com.epam.asap4j.dto.Feature;
 import com.epam.asap4j.service.EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -26,7 +22,7 @@ public class FeatureController {
     @RequestMapping(method = RequestMethod.POST)
     public String saveFeature(@RequestParam String title, @RequestParam String description,
                               @RequestParam Long featureId, @RequestParam Long groupId) {
-        eventService.saveEvent(title,description,featureId,groupId);
+        eventService.saveEvent(title, description, featureId, groupId);
         return "redirect:dashboard";
     }
 }

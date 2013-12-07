@@ -53,7 +53,8 @@ public class UpsaRestServiceImpl implements UpsaRestService {
     public JSONObject getUserByName(String name) {
         UriBuilder uriBuilder = UriBuilder.fromUri(BASE_URI + "/employees?compose=workloads");
         uriBuilder.queryParam("name", name);
-        return restClient.get(uriBuilder.toString(), null, CREDENTIALS);
+        JSONArray array = restClient.getArray(uriBuilder.build().toString(), null, CREDENTIALS);
+        return array.getJSONObject(0);
     }
 
     @Override

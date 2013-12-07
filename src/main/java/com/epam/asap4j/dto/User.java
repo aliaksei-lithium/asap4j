@@ -2,7 +2,7 @@ package com.epam.asap4j.dto;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "m_user")
 public class User {
 
     private String userId;
