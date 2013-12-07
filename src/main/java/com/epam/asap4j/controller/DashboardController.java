@@ -37,8 +37,10 @@ public class DashboardController {
     private static final Person DEFAULT_USER = new Person("4060741400006438769", "Aliaksei Zhynhiarouski");
 
     @RequestMapping(method = RequestMethod.GET)
-    public String index() {
-
+    public String index(HttpSession session) {
+        if (session.getAttribute("userBean") == null) {
+            session.setAttribute("userBean", userService.loginUser(DEFAULT_USER.getPersonName()));
+        }
         return "redirect:dashboard";
     }
 
@@ -82,8 +84,8 @@ public class DashboardController {
     @RequestMapping(value = "login", method = RequestMethod.POST)
     public String login(HttpSession session, User user) {
         if (session.getAttribute("userBean") == null) {
-                  session.setAttribute("userBean", userDao.getByName(user.getPerson().getPersonName()));
-              }
+            session.setAttribute("userBean", userService.loginUser(user.getPerson().getPersonName()));
+        }
         return "redirect:dashboard";
     }
 
