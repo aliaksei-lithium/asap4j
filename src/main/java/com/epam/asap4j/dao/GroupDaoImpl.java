@@ -13,4 +13,12 @@ public class GroupDaoImpl extends BaseDaoImpl<Group, Long> implements GroupDao {
     public GroupDaoImpl() {
         super(Group.class);
     }
+
+    @Override
+    public Group getExternalGroup(String externalId, Group.Type groupType) {
+        return (Group) sessionFactory.getCurrentSession()
+                .createQuery("from m_group where externalId = :externalId and groupType = :groupType")
+                .setParameter("externalId", externalId)
+                .setParameter("groupType", groupType).uniqueResult();
+    }
 }

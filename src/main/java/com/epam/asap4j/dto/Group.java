@@ -1,8 +1,6 @@
 package com.epam.asap4j.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
@@ -10,9 +8,12 @@ import javax.persistence.Id;
 @Entity(name = "m_group")
 public class Group {
 
-    private Long groupId;
+    public enum Type {PROJECT, UNIT, LOCATION}
 
+    private Long groupId;
     private String groupName;
+    private String externalId;
+    private Type groupType;
 
     public Group() {
     }
@@ -38,6 +39,22 @@ public class Group {
 
     public void setGroupName(String personName) {
         this.groupName = personName;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
+    }
+
+    public Type getGroupType() {
+        return groupType;
+    }
+
+    public void setGroupType(Type groupType) {
+        this.groupType = groupType;
     }
 
     @Override
