@@ -10,21 +10,6 @@
         <button type="button" id="btn-groups-global" class="btn btn-lg btn-warning" style="float: right">My groups</button>
     </div>
 </div>
-<!--    <tr th:each="owner : ${selections}">
-                  <td>
-                      <a href="ownerDetails.html"
-                         th:href="@{|/owners/${owner.id}|}"
-                         th:text="|${owner.firstName} ${owner.lastName}|">Mary Smith</a>
-                  </td>
-                  <td th:text="${owner.address}">45, Oxford Street</td>
-                  <td th:text="${owner.city}">Cambridge</td>
-                  <td th:text="${owner.telephone}">555-555-555</td>
-                  <td>
-                      <span th:each="pet : ${owner.pets}" th:text="${pet.name}" th:remove="tag">
-                         Rob&nbsp;
-                      </span>
-                  </td>
-              </tr>-->
 
 <div class="row padding-content">
 
@@ -34,6 +19,13 @@
                 <h3 class="panel-title" style="color: #fff">Happy Birthday!</h3>
             </div>
             <div class="panel-body">
+                <ul>
+                     <li >45, Oxford Street</li>
+               </ul>
+                <ul th:each="wish : ${wishlist}">
+                  <li th:text="${wish.title}">45, Oxford Street</li>
+                </ul>
+
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="hb-name">Aliaksei Zhynhiarouski</span>

@@ -33,11 +33,11 @@ public class DashboardController {
     @Autowired
     private UserDao userDao;
 
-    private static final Person DEFAULT_USER = new Person("4060741400006438769","Aliaksei Zhynhiarouski");
+    private static final Person DEFAULT_USER = new Person("4060741400006438769", "Aliaksei Zhynhiarouski");
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(HttpSession session, @RequestParam(value = "userName", required = false) String userName) {
-        if(session.getAttribute("userBean") == null){
+        if (session.getAttribute("userBean") == null) {
             session.setAttribute("userBean", userDao.getByName(getCurrentUser(session).getPersonName()));
         }
         return "redirect:dashboard";
@@ -46,7 +46,7 @@ public class DashboardController {
     @RequestMapping(value = "dashboard", method = RequestMethod.GET)
     public String getDashboard(HttpSession session, ModelMap model) {
         List<Feature> features = featureDao.getEntitiesList();
-        for(Feature feature : features){
+        for (Feature feature : features) {
             model.addAttribute(feature.getFeatureName(), eventDao.getPersonEventsByFeature(getCurrentUser(session), feature));
         }
 
@@ -72,6 +72,11 @@ public class DashboardController {
     @RequestMapping(value = "group", method = RequestMethod.GET)
     public String getGroup() {
         return "groups/groups-main";
+    }
+
+    @RequestMapping(value = "login", method = RequestMethod.POST)
+    public String login() {
+        return "redirect:dashboard";
     }
 
     private Person getCurrentUser(HttpSession session){
