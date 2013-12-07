@@ -6851,3 +6851,9 @@ footer {
 #btn-wish-global {
   margin-left: 30px;
 }
+.panel-default.hb-title {
+  background-color: #14a085;
+}
+.hb-date {
+  float: right;
+}

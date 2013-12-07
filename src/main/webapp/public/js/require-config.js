@@ -3,7 +3,8 @@ requirejs.config({
     paths: {
         "jquery": "jquery/jquery.min",
         "bootstrap": "bootstrap/bootstrap",
-        "common-scripts" : "../common-scripts"
+        "common-scripts" : "../common-scripts",
+        "navigation" : "../navigation"
     },
     shim: {
         //modules
