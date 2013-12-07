@@ -59,6 +59,13 @@
                 <h3 class="panel-title" style="color: #fff">Accidents</h3>
             </div>
             <div class="panel-body">
+                <ul th:each="acc : ${accidents}" class="list-group">
+                    <li class="list-group-item">
+                        <span class="hb-name" th:text="${acc.title}">FIRE!</span>
+                        <span class="" style="padding-left: 20px" th:text="${acc.description}">high</span>
+                    </li>
+
+                </ul>
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="hb-name">FIRE!</span>
@@ -86,8 +93,8 @@
             </div>
             <div class="panel-body">
                 <div th:each="wish : ${wishlist}" class="alert alert-info">
-                    <a href="#" class="alert-link">${wish.title}</a>
-                    <a href="#" class="alert-link">${wish.description}</a>
+                    <a href="#" class="alert-link" th:text="${wish.title}" >123</a>
+                    <a href="#" class="alert-link" th:text="${wish.description}">123</a>
                 </div>
                 <div class="alert alert-info">
                     <a href="#" class="alert-link">I WANNA DARTS</a>
@@ -111,10 +118,7 @@
                 <h3 class="panel-title">My Custom Events</h3>
             </div>
             <div class="panel-body">
-                <div th:each="acc : ${accidents}" class="alert alert-warning">
-                        <a href="#" class="alert-link">${acc.title}</a>
-                        <a href="#" class="alert-link">${acc.description}</a>
-                </div>
+
                 <div class="alert alert-warning">
                     <a href="#" class="alert-link">Define me</a>
                 </div>
