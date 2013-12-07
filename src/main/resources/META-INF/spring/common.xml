@@ -27,6 +27,13 @@
         <property name="templateResolver" ref="templateResolver"/>
     </bean>
 
+
+    <bean id="restClientUPSA" class="com.epam.workload.rest.client.UpsaRestClient">
+        <constructor-arg index="0" value="${upsa.rest.auth.url}"/>
+        <constructor-arg index="1" value="true"/>
+    </bean>
+
+
     <bean class="org.thymeleaf.spring3.view.ThymeleafViewResolver">
         <property name="templateEngine" ref="templateEngine" />
         <property name="order" value="1" />
