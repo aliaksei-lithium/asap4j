@@ -7,6 +7,8 @@ public class User {
 
     private String userId;
     private Person person;
+    
+    private String password;
 
     @Id
     @GeneratedValue
@@ -25,5 +27,13 @@ public class User {
 
     public void setPerson(Person person) {
         this.person = person;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
