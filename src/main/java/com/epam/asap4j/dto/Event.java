@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
  */
-@Entity
+@Entity(name = "m_event")
 public class Event {
 
     private Long eventId;

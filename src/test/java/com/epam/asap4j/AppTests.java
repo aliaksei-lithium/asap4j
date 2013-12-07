@@ -55,9 +55,9 @@ public class AppTests {
 
         System.out.println(personDao.getEntitiesList());
 
-        Group group = new Group(null, "Project EPM-UPSA");
+        Group group = new Group(null, "Location Minsk");
         groupDao.saveOrUpdate(group);
-        System.out.println(group);
+        System.out.println(groupDao.getEntitiesList());
 
         //groupDao.saveOrUpdate(new Group(null, "Location Minsk"));
         //groupDao.saveOrUpdate(new Group(null, "Unit E3S"));

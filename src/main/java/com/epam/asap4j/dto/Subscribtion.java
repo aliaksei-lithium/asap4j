@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
  */
-@Entity
+@Entity( name = "l_subscribtion")
 public class Subscribtion {
 
     private Long subscribtionId;

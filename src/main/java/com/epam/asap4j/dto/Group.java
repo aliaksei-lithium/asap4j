@@ -7,7 +7,7 @@ import javax.persistence.Id;
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
  */
-@Entity
+@Entity(name = "m_group")
 public class Group {
 
     private Long groupId;
