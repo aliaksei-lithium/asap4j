@@ -1,5 +1,6 @@
 package com.epam.asap4j.dao;
 
+import com.epam.asap4j.dto.EmployeeInfo;
 import com.epam.asap4j.dto.Feature;
 import com.epam.asap4j.dto.Person;
 import org.springframework.stereotype.Repository;
@@ -28,5 +29,16 @@ public class PersonDaoImpl extends BaseDaoImpl<Person, String> implements Person
                         "and gp.groupParticipationId = s.groupParticipation.groupParticipationId " +
                         "and s.feature.featureId = :featureId")
                 .setParameter("featureId", feature.getFeatureId()).list();
+    }
+
+    @Override
+    public List<Person> getPersonsFromSameLocation(Person person) {
+        EmployeeInfo info = (EmployeeInfo)sessionFactory.getCurrentSession().get(EmployeeInfo.class, person.getPersonId());
+
+        return sessionFactory.getCurrentSession().createQuery("select distinct p " +
+                "from m_person p ," +
+                " m_employee_info i " +
+                "where i.locationId = :locationId")
+                .setParameter("locationId", info.getLocationId()).list();
     }
 }

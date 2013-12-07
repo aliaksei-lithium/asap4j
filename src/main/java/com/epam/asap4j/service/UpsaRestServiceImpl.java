@@ -4,6 +4,7 @@ import com.epam.asap4j.client.UpsaRestClient;
 import com.epam.asap4j.client.token.CredentialTypes;
 import com.epam.asap4j.client.token.Credentials;
 import com.epam.asap4j.conf.MessageStorage;
+import com.epam.asap4j.dto.Person;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import javax.ws.rs.core.UriBuilder;
 import java.math.BigInteger;
+import java.util.List;
 
 @Service("restService")
 public class UpsaRestServiceImpl implements UpsaRestService {

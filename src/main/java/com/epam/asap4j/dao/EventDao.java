@@ -14,4 +14,6 @@ public interface EventDao extends BaseDao<Event, Long> {
 
     List<Event> getPersonEventsByFeature(Person person, Feature feature);
 
+    boolean hasEventByExternalId(String externalId, Feature feature);
+
 }

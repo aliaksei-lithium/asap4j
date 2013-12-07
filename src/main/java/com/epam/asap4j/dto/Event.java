@@ -1,6 +1,7 @@
 package com.epam.asap4j.dto;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -11,9 +12,13 @@ public class Event {
 
     private Long eventId;
 
+    private Date date;
+
     private String title;
 
     private String description;
+
+    private String externalId;
 
     private Feature feature;
 
@@ -70,6 +75,22 @@ public class Event {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(String externalId) {
+        this.externalId = externalId;
     }
 
     @Override

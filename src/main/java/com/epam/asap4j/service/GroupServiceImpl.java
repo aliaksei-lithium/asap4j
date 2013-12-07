@@ -5,10 +5,14 @@ import com.epam.asap4j.dto.Group;
 import com.epam.asap4j.dto.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 import java.util.List;
 
 @Service
+@Transactional(value = "txManager")
 public class GroupServiceImpl implements GroupService {
 
     @Autowired

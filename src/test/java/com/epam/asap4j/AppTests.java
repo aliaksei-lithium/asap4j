@@ -2,6 +2,8 @@ package com.epam.asap4j;
 
 import com.epam.asap4j.dao.*;
 import com.epam.asap4j.dto.*;
+import com.epam.asap4j.service.EventService;
+import com.epam.asap4j.service.GroupService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -48,6 +50,9 @@ public class AppTests {
 
     @Autowired
     private EventDao eventDao;
+
+    @Autowired
+    private EventService eventService;
 
     @Test
     public void testAddEntities() {
@@ -108,5 +113,10 @@ public class AppTests {
         System.out.println("Andrei wish: " + eventDao.getPersonEventsByFeature(andrei, featureWish));
         System.out.println("Arkadiy wish: " + eventDao.getPersonEventsByFeature(arkadiy, featureWish));
         System.out.println(personDao.getPersonsWithSubscribtionOnFeature(featureBirthDay));
+    }
+
+    @Test
+    public void fillBirthDay() {
+        eventService.fillBirthDayEvents();
     }
 }

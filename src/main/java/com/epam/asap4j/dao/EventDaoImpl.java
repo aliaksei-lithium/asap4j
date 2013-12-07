@@ -34,4 +34,17 @@ public class EventDaoImpl extends BaseDaoImpl<Event, Long> implements EventDao {
                 .setParameter("personId", person.getPersonId())
                 .setParameter("featureId", feature.getFeatureId()).list();
     }
+
+    @Override
+    public boolean hasEventByExternalId(String externalId, Feature feature) {
+        return sessionFactory.getCurrentSession().createQuery("select e " +
+                "from m_event e " +
+                "where e.externalId = :externalId " +
+                "and e.feature.featureId = :featureId")
+                .setParameter("externalId", externalId)
+                .setParameter("featureId", feature.getFeatureId())
+                .list().isEmpty();
+    }
+
+
 }

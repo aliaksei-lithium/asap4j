@@ -13,4 +13,6 @@ public interface PersonDao extends BaseDao<Person, String> {
 
     List<Person> getPersonsWithSubscribtionOnFeature(Feature feature);
 
+    List<Person> getPersonsFromSameLocation(Person person);
+
 }
