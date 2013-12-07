@@ -1,14 +1,16 @@
 <section class="main-content show-left-menu" th:fragment="content">
 
 <div class="row top-panel" id="first-level-panel">
-
-    <div class="buttons"><!-- Standard button -->
-        <button type="button" class="btn btn-lg btn-warning">Accident!</button>
-
-        <button type="button" id = "btn-wish-global" class="btn btn-lg btn-info">I Wish...</button>
-    </div>
+    
+    <div class="buttons">
+            <button type="button" id="btn-accident-global" class="btn btn-lg btn-danger">Accident!
+            </button>
+    
+            <button type="button" id="btn-wish-global" class="btn btn-lg btn-info">I Wish...</button>
+            <button type="button" id="btn-groups-global" class="btn btn-lg btn-warning" style="float: right">My groups</button>
+        </div>
 </div>
-
+        
 
 <div class="row padding-content">
 <div class="col-sm-6 col-lg-6">
@@ -218,7 +220,7 @@
                         <li><a href="#">Separated link</a></li>
                     </ul>
                 </div>
-
+  
                 <div class="btn-group dropup">
                     <button type="button" class="btn btn-primary">Right dropup</button>
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"> <span class="caret"></span> <span class="sr-only">Toggle Dropdown</span> </button>

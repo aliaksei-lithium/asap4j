@@ -31,7 +31,6 @@ var UUI = function () {
         $("html").niceScroll({styler: "fb", cursorcolor: "#dadada", cursorwidth: '6', cursorborderradius: '0', background: '', cursorborder: '', zindex: '1000'});
 
 
-
         $('#btn-accident-global').click(function () {
             window.location.href = '/accident';
             return false;
@@ -39,6 +38,11 @@ var UUI = function () {
 
         $('#btn-wish-global').click(function () {
             window.location.href = '/wish';
+            return false;
+        });
+
+        $('#btn-groups-global').click(function () {
+            window.location.href = '/groups';
             return false;
         });
 
