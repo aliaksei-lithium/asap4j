@@ -75,7 +75,7 @@ public class DashboardController {
     }
 
     @RequestMapping(value = "login", method = RequestMethod.GET)
-    public String loginPage(User user) {
+    public String loginPage() {
         return "login-main";
     }
 
