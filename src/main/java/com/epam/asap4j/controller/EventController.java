@@ -27,14 +27,15 @@ public class EventController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public String createEvent(@RequestBody Event event) {
+    public String createEvent(Event event) {
         //service create event
+        event.getFeature().setFeatureId(new Long(2));
         List<Group> groups = new ArrayList<>();
         groups.add(new Group(event.getGroupId(),""));
 
         event.setGroups(groups);
         eventDao.saveOrUpdate(event);
-        return "redirect:dashboard/dashboard-main";
+        return "redirect:dashboard";
     }
 
 
