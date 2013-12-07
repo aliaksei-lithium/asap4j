@@ -45,8 +45,8 @@ public class UpsaRestServiceImpl implements UpsaRestService {
 
     @Override
     public JSONArray getProjectTeam(String projectId) {
-        UriBuilder uriBuilder = UriBuilder.fromUri(BASE_URI + "/projects/{id}/team");
-        return restClient.getArray(uriBuilder.build(projectId).toString(), null, CREDENTIALS);
+        String uri = BASE_URI + "/projects/" + projectId + "/team";
+        return restClient.getArray(uri, null, CREDENTIALS);
     }
 
     @Override
@@ -59,7 +59,7 @@ public class UpsaRestServiceImpl implements UpsaRestService {
 
     @Override
     public JSONArray getUnitEmployees(String unitId) {
-        UriBuilder uriBuilder = UriBuilder.fromUri(BASE_URI + "/units/{id}/employees?depth=1&subordinationType=solid&start=1&size=1000");
-        return restClient.getArray(uriBuilder.build(unitId).toString(), null, CREDENTIALS);
+        String uri = BASE_URI + "/units/" + unitId +"/employees?depth=1&subordinationType=solid&start=1&size=1000";
+        return restClient.getArray(uri, null, CREDENTIALS);
     }
 }

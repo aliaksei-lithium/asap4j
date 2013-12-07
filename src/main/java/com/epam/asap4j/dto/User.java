@@ -1,5 +1,7 @@
 package com.epam.asap4j.dto;
 
+import org.hibernate.annotations.GenericGenerator;
+
 import javax.persistence.*;
 
 @Entity(name = "m_user")
@@ -11,7 +13,8 @@ public class User {
     private String password;
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
     public String getUserId() {
         return userId;
     }
