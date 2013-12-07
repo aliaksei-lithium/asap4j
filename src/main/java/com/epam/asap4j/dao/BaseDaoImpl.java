@@ -1,17 +1,17 @@
 package com.epam.asap4j.dao;
 
-import com.epam.asap4j.dto.Entity;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigInteger;
 import java.util.List;
 
 /**
  * User: Andrei_Akatsyeu
  * Date: 12/3/13
  */
-public abstract class BaseDaoImpl<T extends Entity> implements BaseDao<T> {
+public abstract class BaseDaoImpl<T> implements BaseDao<T> {
 
     private Class baseClass;
 
@@ -24,7 +24,7 @@ public abstract class BaseDaoImpl<T extends Entity> implements BaseDao<T> {
 
     @Override
     @Transactional(value = "txManager")
-    public T getEntityById(long id) {
+    public T getEntityById(BigInteger id) {
         return (T)sessionFactory.getCurrentSession().get(baseClass, id);
     }
 

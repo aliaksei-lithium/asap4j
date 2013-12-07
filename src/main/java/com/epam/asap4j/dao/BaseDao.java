@@ -1,17 +1,15 @@
 package com.epam.asap4j.dao;
 
-import com.epam.asap4j.dto.Entity;
-import org.springframework.transaction.annotation.Transactional;
-
+import java.math.BigInteger;
 import java.util.List;
 
 /**
  * User: Andrei_Akatsyeu
  * Date: 12/3/13
  */
-public interface BaseDao <T extends Entity> {
+public interface BaseDao <T> {
 
-    T getEntityById(long id);
+    T getEntityById(BigInteger id);
 
     List<T> getEntitiesList();
 

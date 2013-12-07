@@ -1,6 +1,7 @@
 package com.epam.asap4j.dao;
 
 import com.epam.asap4j.dto.Employee;
+import com.epam.asap4j.dto.Person;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -8,9 +9,9 @@ import org.springframework.stereotype.Repository;
  * Date: 12/3/13
  */
 @Repository
-public class EmployeeDaoImpl extends BaseDaoImpl<Employee> implements EmployeeDao {
+public class PersonDaoImpl extends BaseDaoImpl<Person> implements PersonDao {
 
-    public EmployeeDaoImpl() {
-        super(Employee.class);
+    public PersonDaoImpl() {
+        super(Person.class);
     }
 }
