@@ -20,7 +20,6 @@ public class EventDaoImpl extends BaseDaoImpl<Event, Long> implements EventDao {
     }
 
     @Override
-    @Transactional(value = "txManager")
     public List<Event> getPersonEventsByFeature(Person person, Feature feature) {
         return sessionFactory.getCurrentSession().createQuery(
                 "select distinct e " +

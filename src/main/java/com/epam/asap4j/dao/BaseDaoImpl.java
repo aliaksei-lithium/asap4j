@@ -11,6 +11,7 @@ import java.util.List;
  * User: Andrei_Akatsyeu
  * Date: 12/3/13
  */
+@Transactional(value = "txManager")
 public abstract class BaseDaoImpl<T, K extends Serializable>
         implements BaseDao<T, K> {
 
@@ -24,25 +25,21 @@ public abstract class BaseDaoImpl<T, K extends Serializable>
     }
 
     @Override
-    @Transactional(value = "txManager")
     public T getEntityById(K id) {
         return (T) sessionFactory.getCurrentSession().get(baseClass, id);
     }
 
     @Override
-    @Transactional(value = "txManager")
     public List<T> getEntitiesList() {
         return (List<T>) sessionFactory.getCurrentSession().createCriteria(baseClass).list();
     }
 
     @Override
-    @Transactional(value = "txManager")
     public void saveOrUpdate(T entity) {
         sessionFactory.getCurrentSession().saveOrUpdate(entity);
     }
 
     @Override
-    @Transactional(value = "txManager")
     public void deleteEntity(T entity) {
         sessionFactory.getCurrentSession().delete(entity);
     }

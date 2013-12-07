@@ -52,30 +52,30 @@ public class AppTests {
     @Test
     public void testAddEntities() {
 
-        Person andrei = new Person("271118", "Arkadiy Dobkin");
+        Person andrei = new Person("4060741400005112579", "Andrei Akatsyeu");
         personDao.saveOrUpdate(andrei);
 
-        Person arkadiy = new Person("4060741400005112579", "Andrei Akatsyeu");
+        Person arkadiy = new Person("271118", "Arkadiy Dobkin");
         personDao.saveOrUpdate(arkadiy);
 
-        Feature featureBirthDay = new Feature(null, "BirthDay");
+        Feature featureBirthDay = new Feature(1L, "BirthDay");
         featureDao.saveOrUpdate(featureBirthDay);
 
-        Feature featureWish = new Feature(null, "Wish List");
+        Feature featureWish = new Feature(2L, "Wish List");
         featureDao.saveOrUpdate(featureWish);
 
         System.out.println(personDao.getEntitiesList());
 
-        Group groupMinsk = new Group(null, "Location Minsk");
+        Group groupMinsk = new Group(1L, "Location Minsk");
         groupDao.saveOrUpdate(groupMinsk);
 
-        Group groupNewtown = new Group(null, "Location Newtown");
+        Group groupNewtown = new Group(2L, "Location Newtown");
         groupDao.saveOrUpdate(groupNewtown);
 
-        Group groupUPSA = new Group(null, "Project EPM-UPSA");
+        Group groupUPSA = new Group(3L, "Project EPM-UPSA");
         groupDao.saveOrUpdate(groupUPSA);
 
-        Group groupE3S = new Group(null, "Unit E3S");
+        Group groupE3S = new Group(4L, "Unit E3S");
         groupDao.saveOrUpdate(groupE3S);
 
         System.out.println(groupDao.getEntitiesList());
@@ -107,5 +107,6 @@ public class AppTests {
         System.out.println("Andrei birthday: " + eventDao.getPersonEventsByFeature(andrei, featureBirthDay));
         System.out.println("Andrei wish: " + eventDao.getPersonEventsByFeature(andrei, featureWish));
         System.out.println("Arkadiy wish: " + eventDao.getPersonEventsByFeature(arkadiy, featureWish));
+        System.out.println(personDao.getPersonsWithSubscribtionOnFeature(featureBirthDay));
     }
 }

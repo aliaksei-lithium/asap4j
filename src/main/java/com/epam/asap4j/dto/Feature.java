@@ -23,7 +23,6 @@ public class Feature {
     }
 
     @Id
-    @GeneratedValue
     public Long getFeatureId() {
         return featureId;
     }
