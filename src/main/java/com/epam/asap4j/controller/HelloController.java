@@ -23,7 +23,7 @@ public class HelloController {
 
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) {
-        Person employee = personDao.getEntityById(BigInteger.valueOf(271118));
+        Person employee = personDao.getEntityById("271118");
         model.addAttribute("message", "Hello " + employee.toString());
         model.addAttribute("loc", restService.getLocation(BigInteger.valueOf(271118)));
         return "hello";
