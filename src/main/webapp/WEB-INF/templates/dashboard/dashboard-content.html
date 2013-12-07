@@ -20,11 +20,13 @@
             </div>
             <div class="panel-body">
 
-              <!--  <ul th:each="birth : ${birthday}">
-                  <li th:text="${birth.title}">123</li>
-                  <li th:text="${birth.date}">234s</li>
+                <ul class="list-group" th:each="birth : ${birthday}">
+                    <li class="list-group-item">
+                        <span class="hb-name" th:text="${birth.title}">Aliaksei Zhynhiarouski</span>
+                     <span class="hb-date" th:text="${birth.date}">13-02-1991</span>
+                    </li>
                 </ul>
--->
+
                 <ul class="list-group">
                     <li class="list-group-item">
                         <span class="hb-name">Aliaksei Zhynhiarouski</span>
@@ -83,6 +85,10 @@
                 <h3 class="panel-title" style="color: #fff">Wish list</h3>
             </div>
             <div class="panel-body">
+                <div th:each="wish : ${wishlist}" class="alert alert-info">
+                    <a href="#" class="alert-link">${wish.title}</a>
+                    <a href="#" class="alert-link">${wish.description}</a>
+                </div>
                 <div class="alert alert-info">
                     <a href="#" class="alert-link">I WANNA DARTS</a>
                     <span class="hb-date"> like! <span class="badge">19</span></span>
@@ -105,6 +111,10 @@
                 <h3 class="panel-title">My Custom Events</h3>
             </div>
             <div class="panel-body">
+                <div th:each="acc : ${accidents}" class="alert alert-warning">
+                        <a href="#" class="alert-link">${acc.title}</a>
+                        <a href="#" class="alert-link">${acc.description}</a>
+                </div>
                 <div class="alert alert-warning">
                     <a href="#" class="alert-link">Define me</a>
                 </div>

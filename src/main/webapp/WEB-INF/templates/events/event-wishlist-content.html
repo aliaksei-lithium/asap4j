@@ -27,7 +27,7 @@
                 <select class="form-control " id="group-select" th:field="*{groupId}">
                     <option th:each="group: ${groupList}"
                              th:value="${group.groupId}"
-                             th:text="#{${'group.groupName}}">Wireframe</option>
+                             th:text="${group.groupName}">Wireframe</option>
                     <!--<option value="1">EPM-UPSA</option>
                     <option value="1">E3S</option>
                     <option value="1">Nezavisimosti, 177-2</option>
