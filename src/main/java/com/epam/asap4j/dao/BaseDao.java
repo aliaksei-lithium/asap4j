@@ -1,7 +1,6 @@
 package com.epam.asap4j.dao;
 
 import java.io.Serializable;
-import java.math.BigInteger;
 import java.util.List;
 
 /**

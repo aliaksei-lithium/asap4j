@@ -1,8 +1,6 @@
 package com.epam.asap4j.client.token;
 
 /**
- * 
- *
  * @author Aliaksandr_Novik
  */
 public interface Expirable {

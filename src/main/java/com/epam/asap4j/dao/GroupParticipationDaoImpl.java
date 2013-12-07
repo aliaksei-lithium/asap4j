@@ -1,7 +1,6 @@
 package com.epam.asap4j.dao;
 
 import com.epam.asap4j.dto.GroupParticipation;
-import com.epam.asap4j.dto.Person;
 import org.springframework.stereotype.Repository;
 
 /**

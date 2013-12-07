@@ -5,19 +5,17 @@ import com.epam.asap4j.client.cache.SimpleCache;
 import com.epam.asap4j.client.token.Credentials;
 import com.epam.asap4j.client.token.Token;
 import com.epam.asap4j.client.utils.ClientHelper;
-
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.WebResource;
 import com.sun.jersey.api.client.WebResource.Builder;
 import com.sun.jersey.core.util.MultivaluedMapImpl;
-
-import java.text.ParseException;
-import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.MultivaluedMap;
-
 import org.apache.commons.codec.binary.Base64;
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.MultivaluedMap;
+import java.text.ParseException;
 
 /**
  * Rest clent for UPSA/SPF APIs (authentication styles are the same for both apps).

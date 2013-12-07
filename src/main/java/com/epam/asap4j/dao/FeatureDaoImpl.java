@@ -1,7 +1,6 @@
 package com.epam.asap4j.dao;
 
 import com.epam.asap4j.dto.Feature;
-import com.epam.asap4j.dto.Group;
 import org.springframework.stereotype.Repository;
 
 /**

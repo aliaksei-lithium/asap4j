@@ -34,18 +34,18 @@ public final class Token implements Serializable, Expirable {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) {
+        if (obj == null) {
             return false;
         }
-        if(getClass() != obj.getClass()) {
+        if (getClass() != obj.getClass()) {
             return false;
         }
         Token token = (Token) obj;
-        if(this.getTokenId() == null) {
-            if(token.getTokenId() == null) {
+        if (this.getTokenId() == null) {
+            if (token.getTokenId() == null) {
                 return true;
             }
-        } else if(!this.getTokenId().equals(token.getTokenId())) {
+        } else if (!this.getTokenId().equals(token.getTokenId())) {
             return false;
         }
         return true;

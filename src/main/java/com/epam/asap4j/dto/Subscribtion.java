@@ -5,7 +5,7 @@ import javax.persistence.*;
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
  */
-@Entity( name = "l_subscribtion")
+@Entity(name = "l_subscribtion")
 public class Subscribtion {
 
     private Long subscribtionId;
@@ -32,7 +32,7 @@ public class Subscribtion {
         this.subscribtionId = subscribtionId;
     }
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     public GroupParticipation getGroupParticipation() {
         return groupParticipation;
     }
@@ -41,7 +41,7 @@ public class Subscribtion {
         this.groupParticipation = groupParticipation;
     }
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     public Feature getFeature() {
         return feature;
     }

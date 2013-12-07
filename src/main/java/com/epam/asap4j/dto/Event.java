@@ -11,6 +11,10 @@ public class Event {
 
     private Long eventId;
 
+    private String title;
+
+    private String description;
+
     private Feature feature;
 
     private List<Group> groups;
@@ -18,7 +22,8 @@ public class Event {
     public Event() {
     }
 
-    public Event(Feature feature, List<Group> groups) {
+    public Event(String title, Feature feature, List<Group> groups) {
+        this.title = title;
         this.feature = feature;
         this.groups = groups;
     }
@@ -33,7 +38,7 @@ public class Event {
         this.eventId = eventId;
     }
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     public Feature getFeature() {
         return feature;
     }
@@ -42,7 +47,7 @@ public class Event {
         this.feature = feature;
     }
 
-    @ManyToMany(cascade = {CascadeType.ALL})
+    @ManyToMany(cascade = {CascadeType.REFRESH})
     public List<Group> getGroups() {
         return groups;
     }

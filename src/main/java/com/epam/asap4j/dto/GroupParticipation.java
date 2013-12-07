@@ -32,7 +32,7 @@ public class GroupParticipation {
         this.groupParticipationId = groupParticipationId;
     }
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     public Group getGroup() {
         return group;
     }
@@ -41,7 +41,7 @@ public class GroupParticipation {
         this.group = group;
     }
 
-    @ManyToOne(cascade = {CascadeType.ALL})
+    @ManyToOne(cascade = {CascadeType.REFRESH})
     public Person getPerson() {
         return person;
     }

@@ -12,18 +12,18 @@ import java.util.concurrent.ConcurrentMap;
  * If element's expiration time is set to -1 then it's not expirable and won't
  * be removed from cache.
  *
- * @author Aliaksandr_Novik
  * @param <K> key element
  * @param <V> value(must implement {@link Expirable})
+ * @author Aliaksandr_Novik
  */
-public class ExpirableCache<K,V extends Expirable> implements SimpleCache<K,V> {
+public class ExpirableCache<K, V extends Expirable> implements SimpleCache<K, V> {
 
-    private final ConcurrentMap<K,ValueWrapper> concurrentMap = new ConcurrentHashMap<>();
+    private final ConcurrentMap<K, ValueWrapper> concurrentMap = new ConcurrentHashMap<>();
 
     /**
      * Put a value in a cache.
      *
-     * @param key key element
+     * @param key   key element
      * @param value {@link Expirable} value
      */
     public void put(K key, V value) {
@@ -53,7 +53,7 @@ public class ExpirableCache<K,V extends Expirable> implements SimpleCache<K,V> {
             V value = valueWrapper.value;
             long expirationTime = value.expiresAfter();
             long now = now();
-            if(now <= insertTime + expirationTime && expirationTime != -1) {
+            if (now <= insertTime + expirationTime && expirationTime != -1) {
                 concurrentMap.remove(key);
             }
         }

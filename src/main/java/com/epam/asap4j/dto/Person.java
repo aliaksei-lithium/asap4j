@@ -1,13 +1,12 @@
 package com.epam.asap4j.dto;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
  * Created by Andrei_Akatsyeu on 12/7/13.
  */
-@Entity( name = "m_person")
+@Entity(name = "m_person")
 public class Person {
 
     private String personId;

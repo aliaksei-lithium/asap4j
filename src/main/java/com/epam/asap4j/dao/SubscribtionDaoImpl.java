@@ -1,6 +1,5 @@
 package com.epam.asap4j.dao;
 
-import com.epam.asap4j.dto.Person;
 import com.epam.asap4j.dto.Subscribtion;
 import org.springframework.stereotype.Repository;
 

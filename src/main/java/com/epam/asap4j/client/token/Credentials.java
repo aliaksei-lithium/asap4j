@@ -15,7 +15,8 @@ public class Credentials implements Serializable {
 
     private CredentialTypes credentialType;
 
-    public Credentials() {}
+    public Credentials() {
+    }
 
     public Credentials(String login, String password) {
         this.login = login;
