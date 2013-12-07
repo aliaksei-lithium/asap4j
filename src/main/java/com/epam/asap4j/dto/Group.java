@@ -1,6 +1,7 @@
 package com.epam.asap4j.dto;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.math.BigInteger;
 
@@ -15,6 +16,7 @@ public class Group {
     private String groupName;
 
     @Id
+    @GeneratedValue
     public BigInteger getGroupId() {
         return groupId;
     }
